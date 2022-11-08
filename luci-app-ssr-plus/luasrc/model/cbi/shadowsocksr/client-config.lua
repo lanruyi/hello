@@ -661,14 +661,6 @@ if is_finded("xray") then
 end
 
 -- [[ TLS部分 ]] --
--- Flow
-o = s:option(Value, "tls_flow", translate("Flow"))
-for _, v in ipairs(tls_flows) do
-	o:value(v, translate(v))
-end
-o.rmempty = true
-o:depends({type = "v2ray", v2ray_protocol = "vless", "tls" = true})
-
 o = s:option(Flag, "tls_sessionTicket", translate("Session Ticket"))
 o:depends({type = "trojan", tls = true})
 o.default = "0"
