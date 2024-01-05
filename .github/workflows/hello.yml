@@ -25,7 +25,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
     - name: Load latest helloworld
       run: |
-        git clone -b main https://github.com/fw876/helloworld.git --depth=1 ./tmp/helloworld
+        git clone -b master https://github.com/fw876/helloworld.git --depth=1 ./tmp/helloworld
         cp -rf ./tmp/helloworld/luci-app-ssr-plus ./
         cp -rf ./tmp/helloworld/tcping ./
         cp -rf ./tmp/helloworld/naiveproxy ./
