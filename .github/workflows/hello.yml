@@ -29,9 +29,32 @@ jobs:
         cp -rf ./tmp/helloworld/luci-app-ssr-plus ./
         cp -rf ./tmp/helloworld/tcping ./
         cp -rf ./tmp/helloworld/naiveproxy ./
+        cp -rf ./tmp/helloworld/xray-core ./
+        cp -rf ./tmp/helloworld/xray-plugin ./
+        cp -rf ./tmp/helloworld/v2raya ./
+        cp -rf ./tmp/helloworld/v2ray-plugin ./
+        cp -rf ./tmp/helloworld/v2ray-core ./
+        cp -rf ./tmp/helloworld/tuic-client ./
+        cp -rf ./tmp/helloworld/trojan ./
+        cp -rf ./tmp/helloworld/simple-obfs ./
+        cp -rf ./tmp/helloworld/shadowsocksr-libev ./
+        cp -rf ./tmp/helloworld/shadowsocks-rust ./
+        cp -rf ./tmp/helloworld/shadow-tls ./
+        cp -rf ./tmp/helloworld/redsocks2 ./
+        cp -rf ./tmp/helloworld/mosdns ./
+        cp -rf ./tmp/helloworld/microsocks ./
+        cp -rf ./tmp/helloworld/lua-neturl ./
+        cp -rf ./tmp/helloworld/ipt2socks ./
+        cp -rf ./tmp/helloworld/hysteria ./
+        cp -rf ./tmp/helloworld/gn ./
+        cp -rf ./tmp/helloworld/dns2tcp ./
+        cp -rf ./tmp/helloworld/dns2socks ./
+        cp -rf ./tmp/helloworld/chinadns-ng ./
     - name: Apply commit changes
       run: |
-        git add ./luci-app-ssr-plus/ ./tcping/ ./naiveproxy/
+        git add ./luci-app-ssr-plus/ ./tcping/ ./naiveproxy/ ./xray-core/ ./xray-plugin/ ./v2raya/ ./v2ray-plugin/ ./v2ray-core/ ./tuic-client/ ./trojan/
+        ./simple-obfs/ ./shadowsocksr-libev/ ./shadowsocks-rust/ ./shadow-tls/ ./redsocks2/ ./mosdns/ ./microsocks/ ./naiveproxy/ ./naiveproxy/
+        ./lua-neturl/ ./ipt2socks/ ./hysteria/ ./gn/ ./dns2tcp/ ./dns2socks/ ./chinadns-ng/
         echo -e "[bot] luci-app-ssr-plus: update\n\nlatest commit: $(cat ./tmp/helloworld/.git/refs/heads/master)" > ./tmp/message
         git commit --file="./tmp/message" || exit 0
     - name: Push Commits
