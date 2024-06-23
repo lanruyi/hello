@@ -52,9 +52,7 @@ jobs:
         cp -rf ./tmp/helloworld/chinadns-ng ./
     - name: Apply commit changes
       run: |
-        git add ./luci-app-ssr-plus/ ./tcping/ ./naiveproxy/ ./xray-core/ ./xray-plugin/ ./v2raya/ ./v2ray-plugin/ ./v2ray-core/ ./tuic-client/ ./trojan/
-        ./simple-obfs/ ./shadowsocksr-libev/ ./shadowsocks-rust/ ./shadow-tls/ ./redsocks2/ ./mosdns/ ./microsocks/ ./naiveproxy/ ./naiveproxy/
-        ./lua-neturl/ ./ipt2socks/ ./hysteria/ ./gn/ ./dns2tcp/ ./dns2socks/ ./chinadns-ng/
+        git add ./luci-app-ssr-plus/ ./tcping/ ./naiveproxy/ ./xray-core/ ./xray-plugin/ ./v2raya/ ./v2ray-plugin/ ./v2ray-core/ ./tuic-client/ ./trojan/ ./simple-obfs/ ./shadowsocksr-libev/ ./shadowsocks-rust/ ./shadow-tls/ ./redsocks2/ ./mosdns/ ./microsocks/ ./naiveproxy/ ./naiveproxy/ ./lua-neturl/ ./ipt2socks/ ./hysteria/ ./gn/ ./dns2tcp/ ./dns2socks/ ./chinadns-ng/
         echo -e "[bot] luci-app-ssr-plus: update\n\nlatest commit: $(cat ./tmp/helloworld/.git/refs/heads/master)" > ./tmp/message
         git commit --file="./tmp/message" || exit 0
     - name: Push Commits
